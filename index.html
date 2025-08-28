@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <br><br>
+    <div class="logo" style="text-align: center; width: 5%;">
+        <a href="index.html">
+            <img src="./assets/images/logo.png">
+        </a>
+    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CogVLA: Cognition-Aligned Vision-Language-Action Models via Instruction-Driven Routing & Sparsification">
+    <title>CogVLA Project Page</title>
+    <script>
+
+    </script>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+    <link rel="stylesheet" href="./static/css/bulma.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="./static/css/academicons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="./static/css/index.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script defer src="./static/js/fontawesome.all.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <h1 class="title is-1 publication-title" style="font-weight: bold; font-size: 45px;">
+                            CogVLA: Cognition-Aligned Vision-Language-Action Models via Instruction-Driven Routing & Sparsification
+                        </h1>
+<!--                        <h2 style="font-weight: bold; font-size: 32px;">ICCV 2025</h2>-->
+
+                        <span class="author-block">
+                            <a href="https://orcid.org/0009-0007-7675-3550" target="_blank">Wei&#160;Li</a>,
+                            <a href="https://scholar.google.com/citations?user=iMJYtvwAAAAJ" target="_blank">Renshan&#160;Zhang</a>,
+                            <a href="https://rshaojimmy.github.io/OrionLab/" target="_blank">Rui&#160;Shao</a><sup>&#9993;</sup>,
+                            <a href="https://orcid.org/0009-0001-9102-7051" target="_blank">Jie&#160;He</a>,
+                            <a href="https://liqiangnie.github.io/" target="_blank">Liqiang&#160;Nie</a><sup>&#9993;</sup>
+                        </span>
+                        <div class="is-size-5 publication-authors" style="font-size: 10px;">
+                            <span class="author-block">Harbin Institute of Technology, Shenzhen&#160;&#160;&#160;</span>
+                        </div>
+                        <div class="is-size-5 publication-authors" style="font-size: 10px;">
+                            <span class="author-block"><sup>&#9993;&#160;</sup>Corresponding
+                                author&#160;&#160;</span>
+                        </div>
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                <span class="link-block">
+                                    <a target="_blank" href="#"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+
+                                <span class="link-block">
+                                    <a target="_blank" href="#"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>PDF</span>
+                                    </a>
+                                </span>
+                                <!-- Code Link. -->
+                                <span class="link-block">
+                                    <a target="_blank" href="https://github.com/JiuTian-VL/CogVLA"
+                                        class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fab fa-github"></i>
+                                        </span>
+                                        <span>Code</span>
+                                    </a>
+                                </span>
+                                <br />
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-desktop">
+            <!-- Abstract. -->
+            <div class="columns is-centered has-text-centered">
+                <div class="column">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p style="font-size: 125%">
+                            Recent Vision-Language-Action (VLA) models built on pre-trained Vision-Language Models (VLMs) require extensive post-training,
+                            resulting in high computational overhead that limits scalability and deployment. Existing sparsification strategies—such as
+                            Mixture-of-Depths, layer skipping, and early exit—fall short by neglecting the semantic coupling across vision-language-action modalities,
+                            and focusing narrowly on intra-LLM computation while overlooking end-to-end coherence from perception to control. To address these challenges,
+                            we propose <b>CogVLA</b>, a Cognition-Aligned Vision-Language-Action framework that leverages instruction-driven routing and sparsification
+                            to improve both efficiency and performance. CogVLA draws inspiration from human multimodal coordination and introduces a 3-stage progressive
+                            architecture. 1) <b>Encoder-FiLM based Aggregation Routing (EFA-Routing)</b> injects instruction information into the vision encoder to
+                            selectively aggregate and compress dual-stream visual tokens, forming a instruction-aware latent representation. 2) Building upon this
+                            compact visual encoding, <b>LLM-FiLM based Pruning Routing (LFP-Routing)</b> introduces action intent into the language model by pruning
+                            instruction-irrelevant visually grounded tokens, thereby achieving token-level sparsity. 3) To ensure that compressed perception inputs can
+                            still support accurate and coherent action generation, we introduce <b>V‑L‑A Coupled Attention (CAtten)</b>, which combines causal
+                            vision-language attention with bidirectional action parallel decoding. Extensive experiments on the LIBERO benchmark and real-world robotic
+                            tasks demonstrate that CogVLA achieves state-of-the-art performance with success rates of 97.4% and 70.0%, respectively, while reducing
+                            training costs by 2.5× and decreasing inference latency by 2.8× compared to OpenVLA. CogVLA is open-sourced and publicly
+                            available at
+                            <a href="https://github.com/JiuTian-VL/CogVLA" target="_blank" rel="noopener noreferrer">https://github.com/JiuTian-VL/CogVLA</a>.
+                        </p>
+                        <img src="assets/images/intro.png" class="interpolation-image" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section" style="background-color:#ffffff">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3">Overview Framework of CogVLA</h2>
+                        <img src="assets/images/framework.png" class="interpolation-image" alt=""
+                            style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+                        <span style="font-size: 110%">
+                            CogVLA employs a cognition-aligned, instruction-driven routing & sparsification strategy for efficient action
+                            chunk prediction. Inspired by human multimodal coordination, it integrates task-guided visual aggregation, semantic
+                            pruning, and coherent decoding, ensuring efficient cross-modal representation alignment from perception to control.
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- result -->
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Experiment</span></h2>
+                        <span style="font-size: 110%"></span>
+
+<!--                        <span style="font-size: 110%"> CogVLA achieves state-of-the-art performance on both simulation and real-world task.</span>-->
+
+                        <h1><span class="dvima">Table 1 and 2: Main Results of CogVLA on LIBERO and ALOHA.</span></h1>
+                        <img src="assets/images/main_results.png" class="interpolation-image" alt="" width="900"
+                             style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+
+
+                        <h1><span class="dvima">Table 3: Speed improvement of CogVLA on LIBERO.</span></h1>
+                        <img src="assets/images/speed_results.png" class="interpolation-image" alt="" width="900"
+                             style="display: block; margin-left: auto; margin-right: auto" />
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#ffffff">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Qualitative Results</span></h2>
+                        <span style="font-size: 110%"></span>
+
+
+<!--                        <h1><span class="dvima">Visualization of the register-to-image attention map.</span></h1>-->
+                        <span style="font-size: 110%">
+                            <b>Visualization of the attention map of aggregation tokens.</b>
+                            We visualize the attention maps generated by the cross-modal attention modules.
+                            As shown in the figure, the attention weights highlight task-relevant regions in the input image. These visualizations
+                            demonstrate that CogVLA's instruction-aware routing mechanisms effectively guide the perception module to attend to
+                            semantically meaningful areas, enabling robust visual grounding even in cluttered or ambiguous scenes.
+                        </span>
+                        <br><br>
+                        <img src="assets/images/attention.png" class="interpolation-image" alt="" width="900"
+                             style="display: block; margin-left: auto; margin-right: auto" />
+<!--                        <br>-->
+
+
+
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-widescreen">
+            <h2 class="title is-3"><span class="dvima">Videos of Real-world Tasks</span></h2>
+            <div class="rows is-centered">
+                <h2 style="font-size: 30px; text-align: center;">GALAXEA Platform</h2>
+
+                <div class="video-container">
+                    <div class="box">
+                        <div class="video1"><video controls>
+                                <source src="./assets/videos/galaxea_drawer.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video></div>
+
+                        <div class="text1">
+                            <h1 style="text-align: center;">Instruction: Open the drawer,place the toy into the drawer, and then close it.</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 30px; text-align: center;">ALOHA Platform</h2>
+
+                <div class="video-container">
+                    <div class="box">
+                        <div class="video1"><video controls>
+                                <source src="./assets/videos/aloha_drawer.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video></div>
+
+                        <div class="text1">
+                            <h1 style="text-align: center;">Instruction: Open the drawer,place the toy into the drawer, and then close it.</h1>
+                        </div>
+
+                        <div class="video2"><video controls>
+                                <source src="./assets/videos/aloha_fold.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video></div>
+
+                        <div class="text2">
+                            <h1 style="text-align: center;">Instruction: Fold the T-shirt.</h1>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!--Conclusion-->
+    <section class="section" style="background-color:#efeff081">
+        <div class="container is-max-widescreen">
+            <div class="rows">
+                <div class="rows is-centered ">
+                    <div class="row is-full-width">
+                        <h2 class="title is-3"><span class="dvima">Conclusion</span></h2>
+                        <p style="font-size: 125%">
+                            We presented CogVLA, a cognition-aligned and instruction-driven Vision-Language-Action framework designed
+                            to address the computational inefficiencies and semantic fragmentation in existing VLA models. By integrating
+                            EFA-Routing, LFP-Routing, and CAtten into a unified 3-stage progressive design, CogVLA achieves effective
+                            vision sparsification and coherent cross-modal reasoning. Extensive evaluations on both the LIBERO benchmark
+                            and real-world robotic tasks demonstrate that CogVLA not only achieves state-of-the-art performance but also
+                            significantly reduces computational cost and inference latency. This work highlights the importance of
+                            instruction-driven multimodal sparsification in building scalable and efficient embodied AI systems.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="BibTeX">
+        <div class="container is-max-widescreen content">
+            <h2 class="title">BibTeX</h2>
+            <pre><code>@article{}</code></pre>
+        </div>
+    </section>
+
+</body>
+
+</html>
