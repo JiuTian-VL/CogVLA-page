@@ -7,10 +7,10 @@ The project page for CogVLA.
 
 ```
 @article{li2025cogvla,
-    title={CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification}, 
-    author={Wei Li and Renshan Zhang and Rui Shao and Jie He and Liqiang Nie},
-    journal={arXiv preprint arXiv:2508.21046},
-    year={2025},
+  title={CogVLA: Cognition-Aligned Vision-Language-Action Model via Instruction-Driven Routing & Sparsification},
+  author={Li, Wei and Zhang, Renshan and Shao, Rui and He, Jie and Nie, Liqiang},
+  journal={Advances in neural information processing systems},
+  year={2025}
 }
 ```
 
